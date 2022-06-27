@@ -1,0 +1,5 @@
+io\company\PokedexWebController.class
+io\company\PokemonService.class
+io\company\Pokemon.class
+io\company\PokedexRestController.class
+io\company\Main.class
