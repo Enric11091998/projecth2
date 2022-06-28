@@ -14,8 +14,8 @@ public class PokedexRestController {
 
     //here we are creating our end-point rest API
     @GetMapping("pokemons")
-    public List<Pokemon> getAllPokemons() {
-        return pokemonService.queryPokemonsFromArray();
+    public Iterable<Pokemon> getAllPokemons() {
+        return pokemonService.getAllPokemons();
     }
 
 

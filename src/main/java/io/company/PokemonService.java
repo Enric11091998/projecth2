@@ -7,6 +7,7 @@ import org.springframework.stereotype.Service;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
+import java.util.Random;
 
 
 @Service
@@ -26,19 +27,42 @@ public class PokemonService {
         pokemons.add(pokemon2);
         pokemons.add(pokemon3);
 
-        Faker faker = new Faker();
 
-        for (int i = 0; i <1000 ; i++ ){
-            pokemons.add(new Pokemon (faker.pokemon().name(), faker.pokemon().location(),faker.number().numberBetween(1, 856),
-                    faker.number().numberBetween(5, 1200),faker.number().numberBetween(2, 12000),
-                    faker.number().digits(5) + "-ERUMR-" + faker.number().digits(5)));
-        }
     }
     public Iterable<Pokemon> getAllPokemons() {
 
         return repository.findAll();
     }
 
+    public void fakerPokemon() {
+
+        Random random = new Random();
+
+        Faker faker = new Faker();
+        int number;
+        String use = null;
+        for (int i = 0; i <1000 ; i++ ){
+            number = random.nextInt(1, 3);
+            switch (number){
+                case 1:{
+                    use = "combat";
+                    break;
+                }
+                case 2: {
+                    use = "contest";
+                    break;
+                }
+                case 3:{
+                    use = "walk";
+                    break;
+                }
+            }
+            pokemons.add(new Pokemon (faker.pokemon().name(), faker.pokemon().location(), faker.number().numberBetween(1, 856),
+                    faker.number().numberBetween(5, 1200),faker.number().numberBetween(2, 12000),
+                    use));
+        }
+
+    }
     public Pokemon createPokemon (Pokemon pokemon){
 
         return repository.save(pokemon);
