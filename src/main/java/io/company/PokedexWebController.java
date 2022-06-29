@@ -7,17 +7,17 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
 @Controller
-@RequestMapping("/mylibrary")
+@RequestMapping("/pipo")
 public class PokedexWebController {
 
     @Autowired
     PokemonService pokemonService;
 
-    @RequestMapping("/home")
+    @RequestMapping("/pokemons")
     public String getWeb (Model containerToView) {
 
         containerToView.addAttribute("pokemonsfromController",
-                pokemonService.queryPokemonsFromArray());
+                pokemonService.getAllPokemons());
         containerToView.addAttribute("miabuela",
                 "too much love");
         containerToView.addAttribute("qty students in this class",

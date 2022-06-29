@@ -7,7 +7,7 @@ import org.springframework.web.bind.annotation.RestController;
 import java.util.List;
 
 @RestController
-@RequestMapping("apipokedex")
+@RequestMapping("api")
 public class PokedexRestController {
     @Autowired
     PokemonService pokemonService;
