@@ -1,9 +1,0 @@
-2022-06-23 12:29:31 jdbc[13]: exception
-org.h2.jdbc.JdbcSQLSyntaxErrorException: Syntax error in SQL statement "SELECT * FROM POKEMON NAME [*]HIGH"; SQL statement:
-SELECT * FROM POKEMON NAME HIGH [42000-212]
-2022-06-23 12:29:40 jdbc[13]: exception
-org.h2.jdbc.JdbcSQLSyntaxErrorException: Syntax error in SQL statement "[*]LOCATION"; SQL statement:
-LOCATION [42000-212]
-2022-06-23 12:29:43 jdbc[13]: exception
-org.h2.jdbc.JdbcSQLSyntaxErrorException: Syntax error in SQL statement "[*]LOCATION KG"; SQL statement:
-LOCATION KG [42000-212]

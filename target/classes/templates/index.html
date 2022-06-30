@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <title>Pokedex</title>
+</head>
+<body>
+
+<div class="w3-container w3-margin-bottom">
+
+    <div class="w3-container w3-sand">
+        <h1>Pokedex</h1>
+        <h5>table of pokemons from @Controller @Service @Repository and H2 DB</h5>
+    </div>
+    <Br>
+    <div >
+        <p><a th:href="@{/pipo/fakerPokemon(qtyPokemon=100)}" class="w3-button w3-red">Create fake Pokémon on H2</a></p>
+    </div>
+    <table>
+        <tr>
+            <th>
+                Pokemon Name
+            </th>
+        </tr>
+        <tr th:each="pokemon:${pokemonsfromController}">
+            <td  th:text="${pokemon.Name}"></td>
+        </tr>
+
+
+    </table>
+</div>
+</body>
+</html>
