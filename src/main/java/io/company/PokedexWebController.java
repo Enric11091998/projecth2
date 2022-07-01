@@ -125,6 +125,12 @@ public class PokedexWebController {
         pokemonService.createPokemon(new Pokemon(Name, location, number, high, kg, use));
         return "redirect:index";
     }
+    @RequestMapping("/updatePokemon")
+    public String updatePokemon(@RequestParam("Name") String Name, @RequestParam("location") String location, @RequestParam("number") int number, @RequestParam("high") int high, @RequestParam("kg") int kg, @RequestParam("use") String use) {
+
+
+        return "redirect:index";
+    }
 
 
 
