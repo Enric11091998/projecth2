@@ -16,15 +16,27 @@
     <Br>
     <div >
         <p><a th:href="@{/pipo/fakerPokemon(qtyPokemon=100)}" class="w3-button w3-red">Create fake Pokémon on H2</a></p>
+        <p><a th:href="@{/pipo/createPokemon}" class="w3-button w3-green">Create new Pokémon on H2</a></p>
+        <p><a th:href="@{/pipo/updatePokemon}" class="w3-button w3-black">Update Pokémon on H2</a></p>
+
     </div>
     <table>
         <tr>
             <th>
                 Pokemon Name
             </th>
+            <th>
+                Modify Pokemon
+            </th>
+            <th>Delete</th>
         </tr>
         <tr th:each="pokemon:${pokemonsfromController}">
             <td  th:text="${pokemon.Name}"></td>
+            <td><a th:href ="@{deletePokemonById(pokemonIdFromView=${pokemon.pokemonId})}"
+                   class="w3-button w3-red">Delete <span th:text="${pokemon.Name}"/></a></td>
+
+
+
         </tr>
 
 

@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <title>Create new Pokemon</title>
+</head>
+<body>
+<form action="#"
+      th:action="@{/pipo/addPokemon}" th:object="${pokemonFromController}" method="post">
+    <fieldset>
+        <legend>Datos del Pokemon</legend>
+        <table>
+            <tr>
+                <td><label for="Name">Name:</label></td>
+                <td><input type="text" name="Name" class="w3-input" id="Name"></td>
+            </tr>
+            <tr>
+                <td><label for="location">location: </label></td>
+                <td><input  type="text" name="location" class="w3-input" id="location"></td>
+            </tr>
+            <tr>
+                <td><label for="number">number: </label></td>
+                <td><input  type="text" name="number" class="w3-input" id="number"></td>
+            </tr>
+            <tr>
+                <td><label for="high">high: </label></td>
+                <td><input  type="text" name="high" class="w3-input" id="high"></td>
+            </tr>
+            <tr>
+                <td><label for="kg">kg: </label></td>
+                <td><input  type="text" name="kg" class="w3-input" id="kg"></td>
+            </tr>
+            <tr>
+                <td><label for="use">use: </label></td>
+                <td><input  type="text" name="use" class="w3-input" id="use"></td>
+            </tr>
+            <tr>
+                <td>
+                    <button type="submit">Register...</button>
+                </td>
+            </tr>
+        </table>
+    </fieldset>
+</form>
+</body>
+</html>

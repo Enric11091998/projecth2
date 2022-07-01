@@ -4,30 +4,30 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="b533dcf2-5280-444b-8576-5b15b00eaf66" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/resources/templates/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.gitignore" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/uiDesigner.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/io/company/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/io/company/Main.java" afterDir="false" />
+    <list default="true" id="b533dcf2-5280-444b-8576-5b15b00eaf66" name="Changes" comment="Commit 1">
+      <change afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/templates/createPokemon.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/io/company/PokedexRestController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/io/company/PokedexRestController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/io/company/PokedexWebController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/io/company/PokedexWebController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/io/company/Pokemon.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/io/company/Pokemon.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/io/company/PokemonService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/io/company/PokemonService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/io/company/Repository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/io/company/Repository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/io/company/Repository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/io/company/PokemonRepository.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/application.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/db/pokedex.mv.db" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/db/pokedex.trace.db" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/index.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/application.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/db/pokedex.mv.db" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/db/pokedex.trace.db" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/io/company/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/io/company/Main.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/io/company/PokedexRestController.class" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/io/company/PokedexWebController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/io/company/PokedexWebController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/io/company/Pokemon.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/io/company/Pokemon.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/io/company/PokemonService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/io/company/PokemonService.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/io/company/Repository.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/io/company/Repository.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/io/company/Repository.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/templates/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/templates/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/demo-0.0.1-SNAPSHOT.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/demo-0.0.1-SNAPSHOT.jar.original" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/maven-archiver/pom.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/testCompile/default-testCompile/createdFiles.lst" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/testCompile/default-testCompile/inputFiles.lst" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -37,8 +37,23 @@
   <component name="CodeStyleSettingsInfer">
     <option name="done" value="true" />
   </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="HTML File" />
+      </list>
+    </option>
+  </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="GitSEFilterConfiguration">
+    <file-type-list>
+      <filtered-out-file-type name="LOCAL_BRANCH" />
+      <filtered-out-file-type name="REMOTE_BRANCH" />
+      <filtered-out-file-type name="TAG" />
+      <filtered-out-file-type name="COMMIT_BY_MESSAGE" />
+    </file-type-list>
   </component>
   <component name="JpbToolWindowState">
     <option name="myId2FirstActivated">
@@ -50,9 +65,9 @@
     </option>
     <option name="myId2Visible">
       <map>
-        <entry key="com.haulmont.jpb.jpaInspector" value="true" />
+        <entry key="com.haulmont.jpb.jpaInspector" value="false" />
         <entry key="com.haulmont.jpb.jpaPalette" value="false" />
-        <entry key="com.haulmont.jpb.jpaStructure" value="true" />
+        <entry key="com.haulmont.jpb.jpaStructure" value="false" />
       </map>
     </option>
   </component>
@@ -75,8 +90,10 @@
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent">
+    <property name="DefaultHtmlFileTemplate" value="HTML File" />
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="project.structure.last.edited" value="Modules" />
     <property name="project.structure.proportion" value="0.0" />
     <property name="project.structure.side.proportion" value="0.0" />
@@ -96,19 +113,6 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration default="true" type="JetRunConfigurationType">
-      <module name="library" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration default="true" type="KotlinStandaloneScriptRunConfigurationType">
-      <module name="library" />
-      <option name="filePath" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
     <recent_temporary>
       <list>
         <item itemvalue="Application.Main" />
@@ -124,6 +128,14 @@
       <option name="presentableId" value="Default" />
       <updated>1656582623442</updated>
     </task>
+    <task id="LOCAL-00001" summary="Commit 1">
+      <created>1656586838128</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1656586838128</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -136,5 +148,9 @@
         </entry>
       </map>
     </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="Commit 1" />
+    <option name="LAST_COMMIT_MESSAGE" value="Commit 1" />
   </component>
 </project>

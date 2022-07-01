@@ -10,44 +10,48 @@ import java.util.Optional;
 public class PokemonService {
 
     @Autowired
-    Repository repository;
+    PokemonRepository pokemonRepository;
 
     public Iterable<Pokemon> getAllPokemons() {
 
-        return repository.findAll();
+        return pokemonRepository.findAll();
     }
 
     public Pokemon createPokemon (Pokemon pokemon){
 
-       return repository.save(pokemon);
+       return pokemonRepository.save(pokemon);
     }
 
-    public Optional<Pokemon> findPokemonById(String id){
-
-        return repository.findById(id);
-    }
+//    public Optional<Pokemon> findPokemonByName(String Name){
+//
+//        return pokemonRepository.findPokemonByName(Name);
+//    }
 
     public Optional<Pokemon> findPokemonByNumber(int number){
-        return repository.findPokemonByNumber(number);
+        return pokemonRepository.findPokemonByNumber(number);
     }
 
     public void deletePokemonByNumber(int number){
         if(findPokemonByNumber(number).isPresent()){
-            Optional<Pokemon> deletedPokemon = repository.deleteByNumber(number);
+            Optional<Pokemon> deletedPokemon = pokemonRepository.deleteByNumber(number);
         }
     }
 
-    public void deletePokemonById(String id){
-        if(findPokemonById(id).isPresent()){
-//            Optional<Pokemon> deletedPokemon = repository.deleteById(id);
-        }
+    public void deletePokemonById(Long id){
+        pokemonRepository.deleteById(id);
     }
+
+//    public void deletePokemonByName(String name){
+//        if(findPokemonByName(name).isPresent()){
+//            Optional<Pokemon> deletedPokemon = pokemonRepository.deletePokemonByName(name);
+//        }
+//    }
 
     public Pokemon updatePokemon (Pokemon pokemon){
 
 
 
-        return repository.save(pokemon);
+        return pokemonRepository.save(pokemon);
     }
 
 }

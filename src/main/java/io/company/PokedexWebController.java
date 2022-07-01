@@ -36,7 +36,7 @@ public class PokedexWebController {
         for (int i = 0; i <qty ; i++ ){
             String name = faker.pokemon().name();
             String location = faker.pokemon().location();
-            int number = faker.number().numberBetween(1, 856);
+            int number = faker.number().numberBetween(1, 151);
             numSwitch = faker.number().numberBetween(1, 3);
             int height = faker.number().numberBetween(5, 1200);
             int kg = faker.number().numberBetween(2, 12000);
@@ -66,15 +66,66 @@ public class PokedexWebController {
 
     }
 
-    @RequestMapping("/deletePokemon")
-    public String deleteBook(@RequestParam String titleFromView){
+//    @RequestMapping("/deletePokemonByName")
+//    public String deletePokemonByName(@RequestParam("PokemonName") String pokemonName){
+//        pokemonService.deletePokemonByName(pokemonName);
+//        System.out.println("PokemonName" + pokemonName);
+//
+//        return "redirect:index";
+//
+//    }
 
-        System.out.println("pokemonName" + titleFromView);
+    @RequestMapping("/deletePokemonByNumber")
+    public String deletePokemonByNumber(@RequestParam("PokemonNumber") int pokemonNumber){
+        pokemonService.deletePokemonByNumber(pokemonNumber);
+        System.out.println("PokemonNumber" + pokemonNumber);
 
-        return "pokemondeleted";
-
+        return "redirect:index";
 
     }
+
+    @RequestMapping("/deletePokemonById")
+    public String deletePokemonById(@RequestParam("pokemonIdFromView") Long id){
+        pokemonService.deletePokemonById(id);
+
+        return "redirect:index";
+
+    }
+
+
+
+//    @RequestMapping("/findPokemonByName")
+//    public String findPokemonByName(@RequestParam("PokemonName") String pokemonName){
+//        pokemonService.findPokemonByName(pokemonName);
+//        System.out.println("PokemonName" + pokemonName);
+//
+//        return "redirect:index";
+//
+//    }
+
+    @RequestMapping("/findPokemonByNumber")
+    public String findPokemonByNumber(@RequestParam("PokemonNumber") int pokemonNumber){
+        pokemonService.findPokemonByNumber(pokemonNumber);
+        System.out.println("PokemonNumber" + pokemonNumber);
+
+        return "redirect:index";
+
+    }
+
+    @RequestMapping("/createPokemon")
+    public String createPokemon(Model containerToView){
+        containerToView.addAttribute("pokemonFromController", pokemonService.getAllPokemons());
+        return "createPokemon";
+
+    }
+    @RequestMapping("/addPokemon")
+    public String addPokemon(@RequestParam("Name") String Name, @RequestParam("location") String location, @RequestParam("number") int number, @RequestParam("high") int high, @RequestParam("kg") int kg, @RequestParam("use") String use) {
+
+
+        pokemonService.createPokemon(new Pokemon(Name, location, number, high, kg, use));
+        return "redirect:index";
+    }
+
 
 
 }
