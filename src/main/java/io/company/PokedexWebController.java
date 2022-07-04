@@ -4,10 +4,13 @@ import com.github.javafaker.Faker;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
 import javax.persistence.Column;
+import java.util.Optional;
 import java.util.Random;
 
 @Controller
@@ -126,10 +129,38 @@ public class PokedexWebController {
         return "redirect:index";
     }
     @RequestMapping("/updatePokemon")
-    public String updatePokemon(@RequestParam("Name") String Name, @RequestParam("location") String location, @RequestParam("number") int number, @RequestParam("high") int high, @RequestParam("kg") int kg, @RequestParam("use") String use) {
+    public String updatePokemon(@RequestParam("pokemonIdFromView") Long id, Model pokemonfromController) {
+        pokemonfromController.addAttribute("pokemonfromController",
+                pokemonService.findPokemonById(id).get());
+        return "updatePokemon";
+    }
 
+    @RequestMapping("/deleteAllPokemon")
+    public String deleteAllPokemon(){
+
+        pokemonService.deleteAllPokemon();
 
         return "redirect:index";
+    }
+
+    @RequestMapping("/showAllPokemonData")
+    public String showAllPokemonData(Model containerToView){
+
+        return "showAllPokemonData";
+    }
+
+    @PostMapping("/replacePokemon/{idFromView}")
+    public String replacePokemon(@PathVariable("idFromView") Long id, Pokemon pokemon,
+                              Model pokemonfromController) {
+        pokemonfromController.addAttribute("pokemonfromController",
+                pokemonService.findPokemonById(id).get());
+        Optional<Pokemon> newPokemon = pokemonService.findPokemonById(id);
+        if (newPokemon.isPresent()) {
+            pokemon = new Pokemon(pokemon.getPokemonId(), pokemon.getName(), pokemon.getLocation(), pokemon.getNumber(), pokemon.getHigh(), pokemon.getKg(), pokemon.getUse());
+            pokemonService.createPokemon(pokemon);
+            return "redirect:/pipo/index";
+        } else return "error";
+
     }
 
 

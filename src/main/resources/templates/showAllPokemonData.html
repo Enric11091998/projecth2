@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <title>ShowAllData</title>
+</head>
+<body>
+    <div class="w3-container w3-sand">
+        <h1>Pokedex</h1>
+        <h5>table of pokemons from @Controller @Service @Repository and H2 DB</h5>
+    </div>
+<legend>Pokemon Data</legend>
+<table>
+    <tr>
+        <th>
+            Name
+        </th>
+        <th>
+            location
+        </th>
+        <th>
+            number
+        </th>
+        <th>
+            high
+        </th>
+        <th>
+            kg
+        </th>
+        <th>use</th>
+    </tr>
+    <tr th:each="pokemon:${pokemonsfromController}">
+        <td  th:text="${pokemon.Name}"></td>
+        <td  th:text="${pokemon.location}"></td>
+        <td  th:text="${pokemon.number}"></td>
+        <td  th:text="${pokemon.high}"></td>
+        <td  th:text="${pokemon.kg}"></td>
+        <td  th:text="${pokemon.use}"></td>
+    </tr>
+</table>
+</body>
+</html>

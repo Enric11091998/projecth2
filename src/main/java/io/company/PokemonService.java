@@ -22,6 +22,11 @@ public class PokemonService {
        return pokemonRepository.save(pokemon);
     }
 
+    public Optional<Pokemon> findPokemonById(Long id){
+
+        return pokemonRepository.findById(id);
+    }
+
 //    public Optional<Pokemon> findPokemonByName(String Name){
 //
 //        return pokemonRepository.findPokemonByName(Name);
@@ -46,11 +51,11 @@ public class PokemonService {
 //            Optional<Pokemon> deletedPokemon = pokemonRepository.deletePokemonByName(name);
 //        }
 //    }
+    public void deleteAllPokemon(){
+        pokemonRepository.deleteAll();
+    }
 
     public Pokemon updatePokemon (Pokemon pokemon){
-
-
-
         return pokemonRepository.save(pokemon);
     }
 

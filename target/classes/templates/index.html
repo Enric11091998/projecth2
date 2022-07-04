@@ -15,8 +15,9 @@
     </div>
     <Br>
     <div >
-        <p><a th:href="@{/pipo/fakerPokemon(qtyPokemon=100)}" class="w3-button w3-red">Create fake Pokémon on H2</a></p>
-        <p><a th:href="@{/pipo/createPokemon}" class="w3-button w3-red">Create new Pokémon on H2</a></p>
+        <p><a th:href="@{/pipo/fakerPokemon(qtyPokemon=100)}" class="w3-button w3-purple">Create fake Pokémon on H2</a></p>
+        <p><a th:href="@{/pipo/createPokemon}" class="w3-button w3-green">Create new Pokémon on H2</a></p>
+        <p><a th:href="@{/pipo/deleteAllPokemon}" class="w3-button w3-red">Delete all Pokémon on H2</a></p>
 
     </div>
     <table>
@@ -25,12 +26,39 @@
                 Pokemon Name
             </th>
             <th>
-                Modify Pokemon
+                location
+            </th>
+            <th>
+                number
+            </th>
+            <th>
+                high
+            </th>
+            <th>
+                kg
+            </th>
+            <th>
+                use
+            </th>
+            <th>
+                Show Pokemon
+            </th>
+            <th>
+                Update Pokemon
             </th>
             <th>Delete</th>
         </tr>
         <tr th:each="pokemon:${pokemonsfromController}">
             <td  th:text="${pokemon.Name}"></td>
+            <td  th:text="${pokemon.location}"></td>
+            <td  th:text="${pokemon.number}"></td>
+            <td  th:text="${pokemon.high}"></td>
+            <td  th:text="${pokemon.kg}"></td>
+            <td  th:text="${pokemon.use}"></td>
+            <td><a th:href ="@{showPokemonById(pokemonIdFromView=${pokemon.pokemonId})}"
+                   class="w3-button w3-blue">Show <span th:text="${pokemon.Name}"/></a></td>
+            <td><a th:href ="@{updatePokemon(pokemonIdFromView=${pokemon.pokemonId})}"
+                   class="w3-button w3-black">Update <span th:text="${pokemon.Name}"/></a></td>
             <td><a th:href ="@{deletePokemonById(pokemonIdFromView=${pokemon.pokemonId})}"
                    class="w3-button w3-red">Delete <span th:text="${pokemon.Name}"/></a></td>
 

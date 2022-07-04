@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <title>Update Pokemon</title>
+</head>
+<body>
+<div class="w3-container">
+
+    <div class="w3-container w3-sand">
+        <h1>Pokemon</h1>
+        <h5>form to update a pokemon sending to @Controller @Service @Repository and H2 DB</h5>
+    </div>
+    <Br>
+
+    <div class="w3-card-4" style="width:50%;">
+        <header class="w3-container w3-dark-gray">
+            <p>Update pokemon</p>
+        </header>
+
+        <div class="w3-container">
+            <form action="#"
+                  th:action="@{replacePokemon/{idFromView}(idFromView=${pokemonfromController.pokemonId})}"
+                  th:object="${pokemonfromController}" method="post">
+                <p>
+                    <label for="pokemonId">Pokemon Id</label>
+                    <input  type="number" name="pokemonId" class="w3-input" id="pokemonId"  th:field="*{pokemonId}" readonly></p>
+                <p>
+                <p>
+                    <label for="Name">Name</label>
+                    <input  type="text" name="Name" class="w3-input" style="color:slateBlue;" id="Name"  th:field="*{Name}"></p>
+                <p>
+                    <label for="location">location</label>
+                    <input  type="text" name="location" class="w3-input" id="location" style="color:slateBlue;" th:field="*{location}"></p>
+                <p>
+                    <label for="number">number</label>
+                    <input type="number" name="number" class="w3-input" id="number" style="color:slateBlue;" th:field="*{number}" ></p>
+                <p>
+                    <label for="high">high</label>
+                    <input type="number" name="high" class="w3-input" id="high" style="color:slateBlue;" th:field="*{high}" ></p>
+                <p>
+                    <label for="kg">kg</label>
+                    <input type="number" name="kg" class="w3-input" id="kg" style="color:slateBlue;" th:field="*{kg}" ></p>
+                <p>
+                    <label for="use">use</label>
+                    <input type="text" name="use" class="w3-input" id="use" style="color:slateBlue;" th:field="*{use}" ></p>
+                <div class="w3-container w3-padding-16">
+                    <input type="submit" value="Update pokemon" class="w3-button w3-padding-16 w3-black w3-right w3-margin-right"/>
+                </div>
+            </form>
+        </div>
+        <footer class="w3-container w3-dark-grey">
+            <p>Pokedex</p>
+        </footer>
+
+    </div>
+
+    <div >
+        <p><a th:href="@{/pipo/index}" class="w3-button w3-red">Back to Pokedex</a></p>
+    </div>
+
+</div>
+</body>
+</html>
