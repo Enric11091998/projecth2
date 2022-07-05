@@ -1,4 +1,4 @@
-package io.company;
+package io.company.model;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import lombok.*;

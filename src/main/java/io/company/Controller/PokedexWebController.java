@@ -1,6 +1,8 @@
-package io.company;
+package io.company.Controller;
 
 import com.github.javafaker.Faker;
+import io.company.Service.PokemonService;
+import io.company.model.Pokemon;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -9,9 +11,7 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
-import javax.persistence.Column;
 import java.util.Optional;
-import java.util.Random;
 
 @Controller
 @RequestMapping("/pipo")
@@ -61,7 +61,7 @@ public class PokedexWebController {
                 }
             }
             System.out.println(i+" "+name);
-            pokemonService.createPokemon(new Pokemon (name, location,number,height,kg, use));
+            pokemonService.createPokemon(new Pokemon(name, location,number,height,kg, use));
         }
 
 

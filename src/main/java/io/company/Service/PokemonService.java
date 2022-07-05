@@ -1,5 +1,7 @@
-package io.company;
+package io.company.Service;
 
+import io.company.Repository.PokemonRepository;
+import io.company.model.Pokemon;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 

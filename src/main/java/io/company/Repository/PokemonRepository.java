@@ -1,5 +1,6 @@
-package io.company;
+package io.company.Repository;
 
+import io.company.model.Pokemon;
 import org.springframework.data.repository.CrudRepository;
 
 import java.util.Optional;
