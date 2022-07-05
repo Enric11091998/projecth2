@@ -5,19 +5,22 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="b533dcf2-5280-444b-8576-5b15b00eaf66" name="Changes" comment="Commit 1">
-      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/io/company/Repository/TrainerRepository.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/io/company/Service/TrainerService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/io/company/model/Trainer.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/templates/createTrainer.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/templates/updateTrainer.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/io/company/PokedexRestController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/io/company/Controller/PokedexRestController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/io/company/PokedexWebController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/io/company/Controller/PokedexWebController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/io/company/Pokemon.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/io/company/model/Pokemon.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/io/company/PokemonRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/io/company/Repository/PokemonRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/io/company/PokemonService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/io/company/Service/PokemonService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/io/company/PokedexRestController.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/io/company/PokedexWebController.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/io/company/Pokemon.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/io/company/PokemonRepository.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/io/company/PokemonService.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/io/company/Controller/PokedexWebController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/io/company/Controller/PokedexWebController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/io/company/Service/PokemonService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/io/company/Service/PokemonService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/io/company/model/Pokemon.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/io/company/model/Pokemon.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/createPokemon.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/createPokemon.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/io/company/Controller/PokedexWebController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/io/company/Controller/PokedexWebController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/io/company/Service/PokemonService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/io/company/Service/PokemonService.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/io/company/model/Pokemon.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/io/company/model/Pokemon.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/templates/createPokemon.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/templates/createPokemon.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/templates/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/templates/index.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/test.mv.db" beforeDir="false" afterPath="$PROJECT_DIR$/test.mv.db" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -31,6 +34,8 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
+        <option value="Class" />
+        <option value="Interface" />
         <option value="HTML File" />
       </list>
     </option>
@@ -160,7 +165,14 @@
       <option name="project" value="LOCAL" />
       <updated>1656936040041</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="Commit 1">
+      <created>1657008018167</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1657008018167</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">

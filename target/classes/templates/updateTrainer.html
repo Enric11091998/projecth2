@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <title>Update Pokemon</title>
+</head>
+<body>
+<div class="w3-container">
+
+    <div class="w3-container w3-sand">
+        <h1>Trainer</h1>
+        <h5>form to update a trainer sending to @Controller @Service @Repository and H2 DB</h5>
+    </div>
+    <Br>
+
+    <div class="w3-card-4" style="width:50%;">
+        <header class="w3-container w3-dark-gray">
+            <p>Update trainer</p>
+        </header>
+
+        <div class="w3-container">
+            <form action="#"
+                  th:action="@{replaceTrainer/{idFromView}(idFromView=${trainerfromController.trainerId})}"
+                  th:object="${trainerfromController}" method="post">
+                <p>
+                    <label for="trainerId">trainer Id</label>
+                    <input  type="number" name="trainerId" class="w3-input" id="trainerId"  th:field="*{trainerId}" readonly></p>
+                <p>
+                <p>
+                    <label for="name">name</label>
+                    <input  type="text" name="name" class="w3-input" style="color:slateBlue;" id="name"  th:field="*{name}"></p>
+                <p>
+                    <label for="job">job</label>
+                    <input  type="text" name="job" class="w3-input" id="job" style="color:slateBlue;" th:field="*{job}"></p>
+                <p>
+                    <label for="numberOfPokemons">Number Of Pokemon</label>
+                    <input type="number" name="numberOfPokemons" class="w3-input" id="numberOfPokemons" style="color:slateBlue;" th:field="*{numberOfPokemons}" ></p>
+                <div class="w3-container w3-padding-16">
+                    <input type="submit" value="Update trainer" class="w3-button w3-padding-16 w3-black w3-right w3-margin-right"/>
+                </div>
+            </form>
+        </div>
+        <footer class="w3-container w3-dark-grey">
+            <p>Pokedex</p>
+        </footer>
+
+    </div>
+
+    <div >
+        <p><a th:href="@{/pipo/index}" class="w3-button w3-red">Back to Pokedex</a></p>
+    </div>
+
+</div>
+</body>
+</html>

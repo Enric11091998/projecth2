@@ -29,11 +29,6 @@ public class PokemonService {
         return pokemonRepository.findById(id);
     }
 
-//    public Optional<Pokemon> findPokemonByName(String Name){
-//
-//        return pokemonRepository.findPokemonByName(Name);
-//    }
-
     public Optional<Pokemon> findPokemonByNumber(int number){
         return pokemonRepository.findPokemonByNumber(number);
     }
@@ -48,11 +43,6 @@ public class PokemonService {
         pokemonRepository.deleteById(id);
     }
 
-//    public void deletePokemonByName(String name){
-//        if(findPokemonByName(name).isPresent()){
-//            Optional<Pokemon> deletedPokemon = pokemonRepository.deletePokemonByName(name);
-//        }
-//    }
     public void deleteAllPokemon(){
         pokemonRepository.deleteAll();
     }

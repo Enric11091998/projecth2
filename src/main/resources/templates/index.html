@@ -16,12 +16,21 @@
     <Br>
     <div >
         <p><a th:href="@{/pipo/fakerPokemon(qtyPokemon=100)}" class="w3-button w3-purple">Create fake Pokémon on H2</a></p>
+        <p><a th:href="@{/pipo/fakerTrainer(qtyTrainer=100)}" class="w3-button w3-purple">Create fake Trainer on H2</a></p>
         <p><a th:href="@{/pipo/createPokemon}" class="w3-button w3-green">Create new Pokémon on H2</a></p>
+        <p><a th:href="@{/pipo/createTrainer}" class="w3-button w3-green">Create new Trainer on H2</a></p>
         <p><a th:href="@{/pipo/deleteAllPokemon}" class="w3-button w3-red">Delete all Pokémon on H2</a></p>
+        <p><a th:href="@{/pipo/deleteAllTrainer}" class="w3-button w3-red">Delete all Trainer on H2</a></p>
 
     </div>
     <table>
         <tr>
+            <th>
+                Trainer Name
+            </th>
+            <th>
+                Job
+            </th>
             <th>
                 Pokemon Name
             </th>
@@ -49,6 +58,8 @@
             <th>Delete</th>
         </tr>
         <tr th:each="pokemon:${pokemonsfromController}">
+            <td  th:text="${pokemon.trainer?.name}"></td>
+            <td  th:text="${pokemon.trainer?.job}"></td>
             <td  th:text="${pokemon.Name}"></td>
             <td  th:text="${pokemon.location}"></td>
             <td  th:text="${pokemon.number}"></td>
@@ -67,6 +78,28 @@
         </tr>
 
 
+    </table>
+
+    <table>
+        <tr>
+            <th>
+                Trainer Name
+            </th>
+            <th>
+                Job
+            </th>
+        </tr>
+        <tr th:each="trainer:${trainerfromController}">
+            <td  th:text="${trainer.name}"></td>
+            <td  th:text="${trainer.job}"></td>
+            <td><a th:href ="@{showTrainerById(trainerIdFromView=${trainer.trainerId})}"
+                   class="w3-button w3-blue">Show <span th:text="${trainer.Name}"/></a></td>
+            <td><a th:href ="@{updateTrainer(trainerIdFromView=${trainer.trainerId})}"
+                   class="w3-button w3-black">Update <span th:text="${trainer.Name}"/></a></td>
+            <td><a th:href ="@{deleteTrainerById(trainerIdFromView=${trainer.trainerId})}"
+                   class="w3-button w3-red">Delete <span th:text="${trainer.Name}"/></a></td>
+
+        </tr>
     </table>
 </div>
 </body>

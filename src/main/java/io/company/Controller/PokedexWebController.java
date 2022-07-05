@@ -2,7 +2,9 @@ package io.company.Controller;
 
 import com.github.javafaker.Faker;
 import io.company.Service.PokemonService;
+import io.company.Service.TrainerService;
 import io.company.model.Pokemon;
+import io.company.model.Trainer;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -11,6 +13,8 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
+import java.util.LinkedList;
+import java.util.List;
 import java.util.Optional;
 
 @Controller
@@ -20,11 +24,17 @@ public class PokedexWebController {
     @Autowired
     PokemonService pokemonService;
 
+    @Autowired
+    TrainerService trainerService;
+
     @RequestMapping("/index")
-    public String getWeb (Model containerToView) {
+    public String getWeb (Model containerToView, Model trainerToView) {
 
         containerToView.addAttribute("pokemonsfromController",
                 pokemonService.getAllPokemons());
+
+        trainerToView.addAttribute("trainerfromController",
+                trainerService.getAllTrainers());
 
         return "index";
     }
@@ -162,6 +172,85 @@ public class PokedexWebController {
         } else return "error";
 
     }
+
+    @RequestMapping("/fakerTrainer")
+    public String createFakeTrainer(@RequestParam("qtyTrainer") int qty) {
+
+        Faker faker = new Faker();
+
+        String use = null;
+
+        for (int i = 0; i < qty; i++) {
+            String name = faker.funnyName().name();
+            String job = faker.job().field();
+            int numberOfPokemons = faker.number().numberBetween(1, 6);
+//            List<Pokemon> pokemons = new List<>();
+
+            System.out.println(i+" "+name);
+            trainerService.createTrainer(new Trainer(name, job,numberOfPokemons));
+        }
+
+        return "redirect:index";
+    }
+
+    @RequestMapping("/createTrainer")
+    public String createTrainer(Model containerToView){
+        containerToView.addAttribute("pokemonFromController", pokemonService.getAllPokemons());
+        return "createTrainer";
+
+    }
+    @RequestMapping("/addTrainer")
+    public String addTrainer(@RequestParam("name") String name, @RequestParam("job") String job, @RequestParam("numberOfPokemons") int numberOfPokemons,@RequestParam("pokemons") List<Pokemon> pokemons) {
+
+        trainerService.createTrainer(new Trainer(name, job, numberOfPokemons,pokemons));
+
+        return "redirect:index";
+
+    }
+    @RequestMapping("/updateTrainer")
+    public String updateTrainer(@RequestParam("trainerIdFromView") Long id, Model trainerfromController) {
+        trainerfromController.addAttribute("trainerfromController",
+                trainerService.findTrainerById(id).get());
+        return "updateTrainer";
+    }
+
+    @RequestMapping("/deleteAllTrainer")
+    public String deleteAllTrainer(){
+
+        trainerService.deleteAllTrainer();
+
+        return "redirect:index";
+    }
+
+    @RequestMapping("/showAllTrainerData")
+    public String showAllTrainerData(Model containerToView){
+
+        return "showAllTrainerData";
+    }
+
+    @PostMapping("/replaceTrainer/{idFromView}")
+    public String replaceTrainer(@PathVariable("idFromView") Long id, Trainer trainer,
+                                 Model trainerfromController) {
+        trainerfromController.addAttribute("trainerfromController",
+                trainerService.findTrainerById(id).get());
+        Optional<Trainer> newTrainer = trainerService.findTrainerById(id);
+        if (newTrainer.isPresent()) {
+            trainer = new Trainer(trainer.getTrainerId(), trainer.getName(), trainer.getJob(), trainer.getNumberOfPokemons(), trainer.getPokemons());
+            trainerService.createTrainer(trainer);
+            return "redirect:/pipo/index";
+        } else return "error";
+
+    }
+
+    @RequestMapping("/deleteTrainerById")
+    public String deleteTrainerById(@RequestParam("trainerIdFromView") Long id){
+        trainerService.deleteTrainerById(id);
+
+        return "redirect:index";
+
+    }
+
+
 
 
 
