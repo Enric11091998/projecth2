@@ -4,6 +4,7 @@ import com.fasterxml.jackson.annotation.JsonIgnore;
 import lombok.*;
 
 import javax.persistence.*;
+import java.util.Optional;
 
 @Getter @Setter @ToString @NoArgsConstructor @AllArgsConstructor
 @Entity(name="Pokemon")
@@ -29,6 +30,16 @@ public class Pokemon {
     @JoinColumn(name = "trainer_trainer_id")
     Trainer trainer;
 
+    public Pokemon(String name, String location, int numberBetween, int numberBetween1, int numberBetween2, String use, Trainer trainer) {
+        this.Name = name;
+        this.location = location;
+        this.number = numberBetween;
+        this.high = numberBetween1;
+        this.kg = numberBetween2;
+        this.use = use;
+        this.trainer = trainer;
+    }
+
     public Pokemon(String name, String location, int numberBetween, int numberBetween1, int numberBetween2, String use) {
         this.Name = name;
         this.location = location;
@@ -36,7 +47,9 @@ public class Pokemon {
         this.high = numberBetween1;
         this.kg = numberBetween2;
         this.use = use;
+
     }
+
     public Pokemon(Long pokemonId, String name, String location, int numberBetween, int numberBetween1, int numberBetween2, String use) {
         this.pokemonId = pokemonId;
         this.Name = name;
@@ -46,4 +59,5 @@ public class Pokemon {
         this.kg = numberBetween2;
         this.use = use;
     }
+
 }

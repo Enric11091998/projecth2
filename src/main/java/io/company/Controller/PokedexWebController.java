@@ -127,15 +127,16 @@ public class PokedexWebController {
 
     @RequestMapping("/createPokemon")
     public String createPokemon(Model containerToView){
-        containerToView.addAttribute("pokemonFromController", pokemonService.getAllPokemons());
+        containerToView.addAttribute("trainersFromController",
+                trainerService.getAllTrainers());
         return "createPokemon";
 
     }
     @RequestMapping("/addPokemon")
-    public String addPokemon(@RequestParam("Name") String Name, @RequestParam("location") String location, @RequestParam("number") int number, @RequestParam("high") int high, @RequestParam("kg") int kg, @RequestParam("use") String use) {
+    public String addPokemon(@RequestParam("Name") String Name, @RequestParam("location") String location, @RequestParam("number") int number, @RequestParam("high") int high, @RequestParam("kg") int kg, @RequestParam("use") String use, @RequestParam("trainer") long trainerId) {
 
-
-        pokemonService.createPokemon(new Pokemon(Name, location, number, high, kg, use));
+        Optional<Trainer> trainer = trainerService.findTrainerById(trainerId);
+        pokemonService.createPokemon(new Pokemon(Name, location, number, high, kg, use ,trainer));
         return "redirect:index";
     }
     @RequestMapping("/updatePokemon")
@@ -183,7 +184,7 @@ public class PokedexWebController {
         for (int i = 0; i < qty; i++) {
             String name = faker.funnyName().name();
             String job = faker.job().field();
-            int numberOfPokemons = faker.number().numberBetween(1, 6);
+            int numberOfPokemons = faker.number().numberBetween(1, 7);
 //            List<Pokemon> pokemons = new List<>();
 
             System.out.println(i+" "+name);
