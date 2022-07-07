@@ -7,18 +7,14 @@
     <list default="true" id="b533dcf2-5280-444b-8576-5b15b00eaf66" name="Changes" comment="Commit 1">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/io/company/Controller/PokedexWebController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/io/company/Controller/PokedexWebController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/io/company/model/Pokemon.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/io/company/model/Pokemon.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/application.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/createPokemon.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/createPokemon.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/createTrainer.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/createTrainer.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/io/company/Service/PokemonService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/io/company/Service/PokemonService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/index.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/templates/updatePokemon.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/updatePokemon.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/application.properties" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/io/company/Controller/PokedexWebController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/io/company/Controller/PokedexWebController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/io/company/Service/PokemonService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/io/company/Service/PokemonService.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/io/company/model/Pokemon.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/io/company/model/Pokemon.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/io/company/model/Trainer.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/io/company/model/Trainer.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/templates/createPokemon.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/templates/createPokemon.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/templates/createTrainer.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/templates/createTrainer.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test.mv.db" beforeDir="false" afterPath="$PROJECT_DIR$/test.mv.db" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/templates/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/templates/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/templates/updatePokemon.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/templates/updatePokemon.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -164,7 +160,14 @@
       <option name="project" value="LOCAL" />
       <updated>1657022291713</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="Commit 1">
+      <created>1657108631955</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1657108631955</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">

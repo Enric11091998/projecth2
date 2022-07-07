@@ -45,18 +45,14 @@
                 <p>
                     <label for="use">use</label>
                     <input type="text" name="use" class="w3-input" id="use" style="color:slateBlue;" th:field="*{use}" ></p>
-                <span th:if="${pokemonfromController.trainer}">
-                <div th:object="${trainer}" class="w3-input">
+                <p>
                     <label class="w3-text-gray"><b>Select trainers</b></label><br>
                     <select
                             class="w3-button w3-blue" id="selectTrainer" name="trainerId">
-                        <option th:each="trainer : ${trainersFromController}"
+                        <option th:each="trainer : ${trainerfromController}"
                                 th:value="${trainer.trainerId}"
-                                th:field="${trainer.name}"></option>
-                    </select>
-
-                </div>
-                </span>
+                                th:field="*${trainer.name}"></option>
+                    </select></p>
                 <div class="w3-container w3-padding-16">
                     <input type="submit" value="Update pokemon" class="w3-button w3-padding-16 w3-black w3-right w3-margin-right"/>
                 </div>

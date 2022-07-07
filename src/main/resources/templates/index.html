@@ -58,6 +58,7 @@
             <th>Delete</th>
         </tr>
         <tr th:each="pokemon:${pokemonsfromController}">
+
             <td  th:text="${pokemon.trainer?.name}"></td>
             <td  th:text="${pokemon.trainer?.job}"></td>
             <td  th:text="${pokemon.Name}"></td>
@@ -72,6 +73,21 @@
                    class="w3-button w3-black">Update <span th:text="${pokemon.Name}"/></a></td>
             <td><a th:href ="@{deletePokemonById(pokemonIdFromView=${pokemon.pokemonId})}"
                    class="w3-button w3-red">Delete <span th:text="${pokemon.Name}"/></a></td>
+            <td>
+                <label class="w3-text-gray"><b>Select trainers</b></label><br>
+                <select
+                        class="w3-button w3-blue" id="selectTrainer" name="trainerId">
+
+                    <option th:each="trainer : ${trainerfromController}"
+                            th:value="${trainer.trainerId}"
+                            th:text="${trainer.name}"></option>
+                </select>
+                <a th:href ="@{addTrainerToPokemon(pokemonIdFromView=${pokemon.pokemonId})}"
+                   class="w3-button w3-red">Add Trainer to <span th:text="${pokemon.Name}"/></a>
+
+            </td>
+
+
 
 
 

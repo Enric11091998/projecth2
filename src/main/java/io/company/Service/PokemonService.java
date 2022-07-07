@@ -2,6 +2,7 @@ package io.company.Service;
 
 import io.company.Repository.PokemonRepository;
 import io.company.model.Pokemon;
+import io.company.model.Trainer;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -50,5 +51,7 @@ public class PokemonService {
     public Pokemon updatePokemon (Pokemon pokemon){
         return pokemonRepository.save(pokemon);
     }
+
+    public void addTrainerToPokemon (Pokemon pokemon) { pokemonRepository.save(pokemon); }
 
 }

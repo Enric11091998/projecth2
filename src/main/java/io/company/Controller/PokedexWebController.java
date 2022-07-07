@@ -115,6 +115,16 @@ public class PokedexWebController {
 //        return "redirect:index";
 //
 //    }
+    @RequestMapping("/addTrainerToPokemon")
+    public String addTrainerToPokemon(@RequestParam("trainerId") long trainerId, @RequestParam("pokemonId") long pokemonId){
+        Optional<Trainer> trainer = trainerService.findTrainerById(trainerId);
+        Trainer trainer1 = trainer.get();
+        Optional<Pokemon> pokemon = pokemonService.findPokemonById(pokemonId);
+        Pokemon pokemon1 = pokemon.get();
+        pokemon1.setTrainer(trainer1);
+        pokemonService.addTrainerToPokemon(pokemon1);
+        return "redirect:index";
+    }
 
     @RequestMapping("/findPokemonByNumber")
     public String findPokemonByNumber(@RequestParam("PokemonNumber") int pokemonNumber){
@@ -133,16 +143,18 @@ public class PokedexWebController {
 
     }
     @RequestMapping("/addPokemon")
-    public String addPokemon(@RequestParam("Name") String Name, @RequestParam("location") String location, @RequestParam("number") int number, @RequestParam("high") int high, @RequestParam("kg") int kg, @RequestParam("use") String use, @RequestParam("trainer") long trainerId) {
+    public String addPokemon(@RequestParam("Name") String Name, @RequestParam("location") String location, @RequestParam("number") int number, @RequestParam("high") int high, @RequestParam("kg") int kg, @RequestParam("use") String use, @RequestParam("trainerId") long trainerId) {
 
         Optional<Trainer> trainer = trainerService.findTrainerById(trainerId);
-        pokemonService.createPokemon(new Pokemon(Name, location, number, high, kg, use ,trainer));
+        pokemonService.createPokemon(new Pokemon(Name, location, number, high, kg, use ,trainer.get()));
         return "redirect:index";
     }
     @RequestMapping("/updatePokemon")
-    public String updatePokemon(@RequestParam("pokemonIdFromView") Long id, Model pokemonfromController) {
+    public String updatePokemon(@RequestParam("pokemonIdFromView") Long id, Model pokemonfromController, Model trainerFromController) {
         pokemonfromController.addAttribute("pokemonfromController",
                 pokemonService.findPokemonById(id).get());
+        trainerFromController.addAttribute("trainerfromController",
+                trainerService.getAllTrainers());
         return "updatePokemon";
     }
 
