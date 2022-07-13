@@ -213,9 +213,9 @@ public class PokedexWebController {
 
     }
     @RequestMapping("/addTrainer")
-    public String addTrainer(@RequestParam("name") String name, @RequestParam("job") String job, @RequestParam("numberOfPokemons") int numberOfPokemons,@RequestParam("pokemons") List<Pokemon> pokemons) {
+    public String addTrainer(@RequestParam("name") String name, @RequestParam("job") String job, @RequestParam("numberOfPokemons") int numberOfPokemons) {
 
-        trainerService.createTrainer(new Trainer(name, job, numberOfPokemons,pokemons));
+        trainerService.createTrainer(new Trainer(name, job, numberOfPokemons));
 
         return "redirect:index";
 
